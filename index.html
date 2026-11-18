@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>SeaTreasure - safari nurkowe w Egipcie i kursy nurkowania w Krakowie (podgląd)</title>
+<meta name="description" content="Podgląd nowej strony SeaTreasure: safari nurkowe w Egipcie, wyprawy nurkowe i kursy nurkowania w Krakowie.">
+<link rel="icon" href="img/favicon-48.png" sizes="48x48">
+<link rel="preload" as="font" type="font/woff2" href="fonts/jost-rdzen.woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-m-480.webp" media="(max-width:700px)" imagesrcset="img/hero-m-480.webp 480w,img/hero-m-760.webp 760w,img/hero-m-1000.webp 930w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1600.webp" media="(min-width:701px)" imagesrcset="img/hero-1024.webp 1024w,img/hero-1600.webp 1600w,img/hero-2000.webp 2000w" imagesizes="100vw" fetchpriority="high">
+<style>
+@font-face{font-family:Jost;font-weight:300 700;font-display:swap;src:url(fonts/jost-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2026,U+20AC}
+@font-face{font-family:Jost;font-weight:300 700;font-display:swap;src:url(fonts/jost-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+@font-face{font-family:Manrope;font-weight:400 800;font-display:swap;src:url(fonts/manrope-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0,U+00A9,U+00AB,U+00B0,U+00B7,U+00BB,U+00D3,U+00D7,U+00F3,U+2013-2014,U+2018-2019,U+201C-201E,U+2022,U+2026,U+20AC}
+@font-face{font-family:Manrope;font-weight:400 800;font-display:swap;src:url(fonts/manrope-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+:root{--navy:#051E4F;--navy2:#0A2B6B;--sea:#0089C9;--sea2:#00A7E1;--coral:#F2552C;--ink:#0E1A2E;--mut:#4A5870;--g:#EEF3F7;--line:#D5DEE8;--w:min(1640px,100% - 2*var(--pad));--pad:clamp(16px,4vw,56px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:400 17px/1.6 Manrope,system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:Jost,system-ui,sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+.wrap{width:var(--w);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:12px 30px 15px;border:0;border-radius:6px 6px 30px 30px;background:var(--sea);color:#fff;font:600 17px/1.2 Jost,sans-serif;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--navy2);transform:translateY(2px)}
+.btn.bia{background:#fff;color:var(--navy)}
+.btn.bia:hover{background:var(--g)}
+.btn svg{width:18px;height:18px;flex:none}
+/* linia wody z logo: pozioma kreska + półkole pod nią */
+.lw{position:relative;padding-bottom:22px;margin-bottom:34px}
+.lw::before{content:"";position:absolute;left:0;right:0;bottom:12px;height:2px;background:currentColor;opacity:.18}
+.lw::after{content:"";position:absolute;left:0;bottom:-2px;width:30px;height:15px;border-radius:0 0 30px 30px;background:var(--sea)}
+.lw.c::after{left:calc(50% - 15px)}
+h2{font-size:clamp(32px,4.4vw,58px)}
+.lead{font-size:clamp(17px,1.4vw,20px);color:var(--mut);max-width:62ch}
+section{padding:clamp(64px,8vw,120px) 0}
+.g{background:var(--g)}
+/* nagłówek */
+.top{position:absolute;inset:0 0 auto;z-index:20;color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px}
+.logo img{width:clamp(170px,14vw,220px);height:auto}
+.nav{display:flex;gap:clamp(16px,2vw,34px);list-style:none;font:500 16px Jost,sans-serif}
+.nav a{text-decoration:none;padding:8px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--sea2)}
+.nav a[aria-current]{border-color:#fff}
+.tel{font:600 17px Jost,sans-serif;text-decoration:none;white-space:nowrap}
+.burger{display:none;width:48px;height:48px;border:0;background:transparent;color:#fff;cursor:pointer}
+.burger span{display:block;width:26px;height:2px;margin:6px auto;background:currentColor}
+#mob{position:fixed;inset:0;z-index:40;background:var(--navy);color:#fff;display:none;flex-direction:column;padding:24px var(--pad) 32px}
+#mob.on{display:flex}
+#mob .x{align-self:flex-end;width:48px;height:48px;border:0;background:transparent;color:#fff;font-size:34px;line-height:1;cursor:pointer}
+#mob ul{list-style:none;margin:20px 0 auto}
+#mob li a{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14);font:500 26px Jost,sans-serif;text-decoration:none}
+#mob .btn{margin-top:28px;justify-content:center}
+/* hero */
+.hero{position:relative;min-height:max(640px,100svh);display:flex;color:#fff;background:var(--navy);padding:0}
+.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,30,79,.86) 0%,rgba(5,30,79,.55) 42%,rgba(5,30,79,0) 72%),linear-gradient(0deg,rgba(5,30,79,.7),rgba(5,30,79,0) 45%),linear-gradient(180deg,rgba(5,30,79,.55),rgba(5,30,79,0) 22%)}
+.hero .wrap{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 0 clamp(48px,8vh,96px)}
+.hero h1{font-size:clamp(38px,5.6vw,84px);max-width:13.5ch;font-weight:600}
+.hero .pow{display:block;margin-top:26px;padding-top:24px;position:relative;max-width:520px;font-size:clamp(17px,1.5vw,21px);line-height:1.5}
+.hero .pow::before{content:"";position:absolute;left:0;top:0;width:min(520px,100%);height:2px;background:#fff;opacity:.8}
+.hero .pow::after{content:"";position:absolute;left:0;top:0;width:34px;height:17px;border-radius:0 0 34px 34px;background:#fff}
+.hero .akc{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:30px}
+.hero .akc .tel{font-size:19px}
+.hero small{display:block;margin-top:26px;font-size:14px;opacity:.85}
+/* terminy */
+.glowa{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.glowa .lw{flex:1 1 520px;margin-bottom:0}
+.strz{display:flex;gap:10px}
+.strz button{width:52px;height:52px;border-radius:6px 6px 26px 26px;border:2px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer;font-size:22px}
+.strz button:disabled{opacity:.3;cursor:default}
+.tor{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(270px,78vw,340px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px 0 8px;scrollbar-width:none;cursor:grab}
+.tor::-webkit-scrollbar{display:none}
+.tor.drag{cursor:grabbing;scroll-snap-type:none}
+.tor>*{scroll-snap-align:start}
+@media(min-width:1700px){.tor{grid-auto-columns:calc((100% - 4*16px)/5)}}
+.wyj{background:#fff;border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;overflow:hidden}
+.wyj .fot{position:relative;border:0;padding:0;background:var(--navy);cursor:zoom-in;display:block;width:100%}
+.wyj .fot img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.wyj .dt{position:relative;margin:-1px auto 0 22px;width:112px;height:56px;border-radius:0 0 56px 56px;background:var(--navy);color:#fff;text-align:center;font:600 20px/1 Jost,sans-serif;padding-top:9px}
+.wyj .dt span{display:block;font-size:13px;font-weight:400;opacity:.8;margin-top:4px}
+.wyj .tx{padding:16px 22px 22px;display:flex;flex-direction:column;flex:1}
+.wyj h3{font-size:23px;margin-bottom:8px}
+.wyj p{font-size:15px;color:var(--mut)}
+.wyj .cena{margin-top:auto;padding-top:16px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-top:1px solid var(--line);margin-top:18px}
+.wyj .cena b{font:600 24px Jost,sans-serif;color:var(--navy)}
+.wyj .cena small{font-size:13px;color:var(--mut);text-align:right}
+.wyj .msc{display:block;margin-top:6px;font-size:14px;font-weight:700;color:var(--coral)}
+.przyp{margin-top:18px;font-size:14px;color:var(--mut)}
+/* safari ciemna */
+.ciem{background:var(--navy);color:#fff}
+.ciem .lw::after{background:var(--sea2)}
+.saf{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
+.saf .zd{position:relative;max-width:720px;width:100%;justify-self:end}
+.saf .zd img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px 4px 50% 50%/4px 4px 38% 38%}
+.saf .lead{color:#C9D6EA}
+.licz{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin:34px 0}
+.licz div{padding:20px 20px 20px 0;border-top:2px solid rgba(255,255,255,.18)}
+.licz b{display:block;font:600 clamp(40px,4vw,60px)/1 Jost,sans-serif;color:var(--sea2)}
+.licz span{display:block;margin-top:8px;font-size:15px;color:#DCE5F2}
+.bezp{padding:22px 24px;border-radius:4px 4px 28px 28px;background:var(--navy2);font-size:15px;color:#DCE5F2}
+.bezp strong{color:#fff}
+.saf .btn{margin-top:28px}
+/* kursy */
+.kur .wyj .tx{padding-top:20px}
+.kur .tag{font-size:13px;font-weight:700;color:var(--sea);margin-bottom:6px}
+/* wyprawy */
+.wpr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.wp{position:relative;overflow:hidden;border-radius:4px;color:#fff;min-height:440px;display:flex;align-items:flex-end;border:0;padding:0;background:var(--navy);text-align:left;cursor:zoom-in;font:inherit}
+.wp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.wp:hover img{transform:scale(1.04)}
+.wp::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,30,79,.92),rgba(5,30,79,0) 60%)}
+.wp div{position:relative;z-index:2;padding:26px}
+.wp .d{font:600 15px Jost,sans-serif;color:#9FDCF5}
+.wp h3{font-size:32px;margin:6px 0 8px}
+.wp p{font-size:15px;color:#DCE5F2;max-width:36ch}
+/* zespół */
+.zes{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,80px);align-items:center}
+.zes figure img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:40% 50%;border-radius:4px 4px 50% 50%}
+.zes figcaption{margin-top:14px;font-size:14px;color:var(--mut)}
+.cyt{font:400 clamp(22px,2.2vw,30px)/1.35 Jost,sans-serif;color:var(--navy);margin-bottom:26px}
+.zes ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 28px;margin-top:28px}
+.zes li{padding:16px 0;border-top:1px solid var(--line);font-size:15px;color:var(--mut)}
+.zes li b{display:block;color:var(--ink);font:600 18px Jost,sans-serif}
+/* opinie */
+.op{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.op blockquote{background:#fff;border-radius:4px 4px 30px 30px;padding:28px 26px 30px;font-size:15.5px;color:var(--ink);display:flex;flex-direction:column}
+.op blockquote::before{content:"";display:block;width:30px;height:15px;border-radius:0 0 30px 30px;background:var(--sea);margin-bottom:18px}
+.op cite{margin-top:auto;padding-top:18px;font:600 17px Jost,sans-serif;font-style:normal;color:var(--navy)}
+/* kontakt */
+.kon{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,5vw,80px)}
+.dane{list-style:none;margin-top:8px}
+.dane li{padding:16px 0;border-top:1px solid var(--line)}
+.dane small{display:block;font-size:13px;color:var(--mut)}
+.dane a,.dane b{font:600 20px Jost,sans-serif;text-decoration:none;color:var(--navy)}
+form{background:#fff;border-radius:4px 4px 36px 36px;padding:clamp(24px,3vw,40px);border:1px solid var(--line)}
+.pol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-size:14px;font-weight:700;margin-bottom:16px}
+input,select,textarea{display:block;width:100%;margin-top:6px;padding:13px 14px;border:1px solid #B8C5D6;border-radius:4px;font:16px Manrope,sans-serif;color:var(--ink);background:#fff}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--sea);outline-offset:1px}
+#ok{display:none;margin-top:14px;font-size:15px;color:var(--navy);font-weight:700}
+/* stopka */
+footer{background:#03153A;color:#C9D6EA;padding:56px 0 30px;font-size:15px}
+.st{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+footer h3{font-size:18px;color:#fff;margin-bottom:12px}
+footer ul{list-style:none}
+footer li{padding:3px 0}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+.dol{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:14px}
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:60;background:rgba(3,21,58,.94);display:none;align-items:center;justify-content:center;padding:20px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:88vh;border-radius:4px}
+#lb button{position:absolute;top:14px;right:14px;width:48px;height:48px;border:0;background:transparent;color:#fff;font-size:38px;cursor:pointer}
+@media(min-width:2200px){:root{--w:min(2080px,100% - 2*var(--pad))}body{font-size:19px}.hero h1{font-size:104px}.hero .pow{font-size:23px;max-width:600px}.nav{font-size:18px}.wyj h3{font-size:26px}.wp{min-height:560px}}
+@media(max-width:1180px){.nav,.top .tel{display:none}.burger{display:block}.op{grid-template-columns:1fr 1fr}.st{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.saf,.zes,.kon{grid-template-columns:1fr}.saf .zd{order:-1}.saf .zd img{aspect-ratio:4/3}.wpr{grid-template-columns:1fr}.wp{min-height:340px}.zes figure{max-width:420px}}
+@media(max-width:700px){
+body{font-size:16px}
+.top .wrap{height:68px}
+.hero{min-height:max(600px,100svh)}
+.hero::after{background:linear-gradient(0deg,rgba(5,30,79,.94) 0%,rgba(5,30,79,.7) 42%,rgba(5,30,79,0) 70%),linear-gradient(180deg,rgba(5,30,79,.6),rgba(5,30,79,0) 20%)}
+.hero .wrap{padding:96px 0 36px}
+.hero h1{font-size:clamp(33px,9.4vw,42px)}
+.hero .pow{margin-top:18px;padding-top:18px}
+.hero .akc{margin-top:24px;gap:14px 20px}
+.hero small{margin-top:18px;font-size:13px}
+.op{grid-template-columns:1fr}.pol{grid-template-columns:1fr}.zes ul{grid-template-columns:1fr}
+.strz{display:none}
+}
+</style>
+<style>
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+</style>
+</head>
+<body>
+<header class="top">
+<div class="wrap">
+<a class="logo" href="#" aria-label="SeaTreasure - strona główna"><img src="img/logo-b-220.webp" srcset="img/logo-b-220.webp 1x,img/logo-b-440.webp 2x" width="220" height="60" alt="SeaTreasure"></a>
+<ul class="nav">
+<li><a href="#terminy">Terminy</a></li>
+<li><a href="#safari">Safari w Egipcie</a></li>
+<li><a href="#wyprawy">Wyprawy</a></li>
+<li><a href="#kursy">Kursy w Krakowie</a></li>
+<li><a href="#zespol">O nas</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
+</ul>
+<a class="tel" href="tel:+48504508526">504 508 526</a>
+<button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mob"><span></span><span></span><span></span></button>
+</div>
+</header>
+<nav id="mob" aria-label="Menu">
+<button class="x" aria-label="Zamknij menu">&times;</button>
+<ul>
+<li><a href="#terminy">Terminy wyjazdów</a></li>
+<li><a href="#safari">Safari w Egipcie</a></li>
+<li><a href="#wyprawy">Wyprawy nurkowe</a></li>
+<li><a href="#kursy">Kursy w Krakowie</a></li>
+<li><a href="#zespol">O nas</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
+</ul>
+<a class="btn bia" href="tel:+48504508526">Zadzwoń: 504 508 526</a>
+</nav>
+
+<main>
+<section class="hero">
+<picture>
+<source media="(max-width:700px)" srcset="img/hero-m-480.webp 480w,img/hero-m-760.webp 760w,img/hero-m-1000.webp 930w" sizes="100vw">
+<img src="img/hero-1600.webp" srcset="img/hero-1024.webp 1024w,img/hero-1600.webp 1600w,img/hero-2000.webp 2000w" sizes="100vw" width="2000" height="1500" fetchpriority="high" alt="Nurkowanie z delfinami tuż pod powierzchnią morza">
+</picture>
+<div class="wrap">
+<h1>Safari nurkowe w&nbsp;Egipcie i&nbsp;kursy nurkowania w&nbsp;Krakowie</h1>
+<p class="pow">Pod powierzchnią czekają skarby. Nauczymy Cię oddychać pod wodą, a potem zabierzemy tam, gdzie z brzegu się nie dopłynie.</p>
+<div class="akc">
+<a class="btn" href="#terminy">Zobacz terminy wyjazdów <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+<a class="tel" href="tel:+48504508526">tel. 504 508 526</a>
+</div>
+<small>Organizator turystyki nr 22408 · wyjazdy zabezpieczone w Turystycznym Funduszu Gwarancyjnym</small>
+</div>
+</section>
+
+<section id="terminy">
+<div class="wrap">
+<div class="glowa">
+<div class="lw"><h2>Najbliższe wyjazdy</h2></div>
+<div class="strz" data-tor="t1"><button aria-label="Poprzednie">&#8592;</button><button aria-label="Następne">&#8594;</button></div>
+</div>
+<div class="tor" id="t1">
+<article class="wyj"><button class="fot" data-big="img/rafa.webp" aria-label="Powiększ zdjęcie: Safari sylwestrowe"><img src="img/rafa.webp" width="640" height="480" loading="lazy" alt="Safari sylwestrowe - zdjęcie z wyjazdu SeaTreasure"></button><div class="dt">26.12<span>2026</span></div><div class="tx"><h3>Safari sylwestrowe</h3><p>Trasa relax &amp; fun, łódź Bismarck 5*.<span class="msc">14 miejsc</span></p><div class="cena"><b>1590 €</b><small>przelot od 2590 zł</small></div></div></article>
+<article class="wyj"><button class="fot" data-big="img/koral.webp" aria-label="Powiększ zdjęcie: Safari walentynkowe"><img src="img/koral.webp" width="640" height="480" loading="lazy" alt="Safari walentynkowe - zdjęcie z wyjazdu SeaTreasure"></button><div class="dt">12.02<span>2027</span></div><div class="tx"><h3>Safari walentynkowe</h3><p>Zapraszamy pary i singli, zniżka 200 € na osobę.</p><div class="cena"><b>1590 €</b><small>przelot 2390 zł</small></div></div></article>
+<article class="wyj"><button class="fot" data-big="img/palau.webp" aria-label="Powiększ zdjęcie: Palau, serce Mikronezji"><img src="img/palau.webp" width="640" height="480" loading="lazy" alt="Palau, serce Mikronezji - zdjęcie z wyjazdu SeaTreasure"></button><div class="dt">15.02<span>2027</span></div><div class="tx"><h3>Palau, serce Mikronezji</h3><p>Wyprawa na Ocean Spokojny: rekiny, manty, jezioro meduz.</p><div class="cena"><b>3390 €</b><small>przelot ok. 9900 zł</small></div></div></article>
+<article class="wyj"><button class="fot" data-big="img/wrak.webp" aria-label="Powiększ zdjęcie: Turbo wrakowe"><img src="img/wrak.webp" width="640" height="480" loading="lazy" alt="Turbo wrakowe - zdjęcie z wyjazdu SeaTreasure"></button><div class="dt">13.03<span>2027</span></div><div class="tx"><h3>Turbo wrakowe</h3><p>Wraki Morza Czerwonego, łódź Bismarck 5*.<span class="msc">19 miejsc</span></p><div class="cena"><b>1590 €</b><small>przelot 2390 zł</small></div></div></article>
+<article class="wyj"><button class="fot" data-big="img/rekin.webp" aria-label="Powiększ zdjęcie: Wraki, Brothersy i rafy północy"><img src="img/rekin.webp" width="640" height="480" loading="lazy" alt="Wraki, Brothersy i rafy północy - zdjęcie z wyjazdu SeaTreasure"></button><div class="dt">20.03<span>2027</span></div><div class="tx"><h3>Wraki, Brothersy i rafy północy</h3><p>Łódź Bismarck 5*.<span class="msc">21 miejsc</span></p><div class="cena"><b>1490 €</b><small>przelot 2390 zł</small></div></div></article>
+<article class="wyj"><button class="fot" data-big="img/zolw.webp" aria-label="Powiększ zdjęcie: Proste safari z kursem"><img src="img/zolw.webp" width="640" height="480" loading="lazy" alt="Proste safari z kursem - zdjęcie z wyjazdu SeaTreasure"></button><div class="dt">17.04<span>2027</span></div><div class="tx"><h3>Proste safari z kursem</h3><p>Safari połączone z kursem nurkowym, łódź Bismarck 5*.<span class="msc">19 miejsc</span></p><div class="cena"><b>1490 €</b><small>przelot 2390 zł</small></div></div></article>
+<article class="wyj"><button class="fot" data-big="img/wraki-ryby.webp" aria-label="Powiększ zdjęcie: Tirany i Ras Mohammed"><img src="img/wraki-ryby.webp" width="640" height="480" loading="lazy" alt="Tirany i Ras Mohammed - zdjęcie z wyjazdu SeaTreasure"></button><div class="dt">22.05<span>2027</span></div><div class="tx"><h3>Tirany i Ras Mohammed</h3><p>Rafy parku narodowego, łódź SeaTreasure 5*.<span class="msc">21 miejsc</span></p><div class="cena"><b>1590 €</b><small>przelot 2390 zł</small></div></div></article>
+<article class="wyj"><button class="fot" data-big="img/deep.webp" aria-label="Powiększ zdjęcie: Safari południowe"><img src="img/deep.webp" width="640" height="480" loading="lazy" alt="Safari południowe - zdjęcie z wyjazdu SeaTreasure"></button><div class="dt">12.06<span>2027</span></div><div class="tx"><h3>Safari południowe</h3><p>Łódź SeaTreasure 5*.<span class="msc">15 miejsc</span></p><div class="cena"><b>1590 €</b><small>przelot 2390 zł</small></div></div></article>
+<article class="wyj"><button class="fot" data-big="img/kurs-podst.webp" aria-label="Powiększ zdjęcie: Safari rodzinne"><img src="img/kurs-podst.webp" width="640" height="480" loading="lazy" alt="Safari rodzinne - zdjęcie z wyjazdu SeaTreasure"></button><div class="dt">07.08<span>2027</span></div><div class="tx"><h3>Safari rodzinne</h3><p>Zniżka 200 € dla dzieci, łódź Bismarck 5*.<span class="msc">14 miejsc</span></p><div class="cena"><b>1490 €</b><small>przelot 2490 zł</small></div></div></article>
+<article class="wyj"><button class="fot" data-big="img/cenoty.webp" aria-label="Powiększ zdjęcie: Meksyk, cenoty"><img src="img/cenoty.webp" width="640" height="480" loading="lazy" alt="Meksyk, cenoty - zdjęcie z wyjazdu SeaTreasure"></button><div class="dt">25.11<span>2027</span></div><div class="tx"><h3>Meksyk, cenoty</h3><p>Nurkowanie w cenotach i zwiedzanie Jukatanu.</p><div class="cena"><b>2790 €</b><small>przelot ok. 4000 zł</small></div></div></article>
+
+</div>
+<p class="przyp">Ceny i wolne miejsca według kalendarza na seatreasure.pl (stan na 18.11.2026). Do ceny safari w Egipcie dochodzi opłata za parki morskie 150 €.</p>
+</div>
+</section>
+
+<section id="safari" class="ciem">
+<div class="wrap saf">
+<div>
+<div class="lw"><h2>Tydzień na jachcie, z&nbsp;dala od tłumów</h2></div>
+<p class="lead">Na safari nurkujemy tam, dokąd nie dopływają łodzie z baz na brzegu: rafy Morza Czerwonego, Brothers Islands, wrak SS Thistlegorm. Wszystkie omówienia prowadzi polska kadra instruktorska, po polsku.</p>
+<div class="licz">
+<div><b>20</b><span>nurkowań w tydzień</span></div>
+<div><b>4</b><span>nurkowania dziennie, ostatnie nocne</span></div>
+<div><b>6-8</b><span>osób w grupie, każda z własnym przewodnikiem</span></div>
+<div><b>35 m</b><span>jacht z dwuosobowymi kabinami i łazienkami</span></div>
+</div>
+<p class="bezp"><strong>Bezpiecznie i zgodnie z prawem.</strong> Działamy jako organizator turystyki (nr 22408), wyjazdy są zabezpieczone w Turystycznym Funduszu Gwarancyjnym, a każdego uczestnika ubezpieczamy podróżnie i nurkowo, razem z leczeniem w komorze hiperbarycznej.</p>
+<a class="btn bia" href="#terminy">Wybierz termin safari</a>
+</div>
+<div class="zd"><button class="fot" data-big="img/lina.webp" style="border:0;padding:0;background:none;cursor:zoom-in;width:100%"><img src="img/lina.webp" width="640" height="480" loading="lazy" alt="Nurkowie przy linie zejściowej na safari w Egipcie"></button></div>
+</div>
+</section>
+
+<section id="wyprawy">
+<div class="wrap">
+<div class="lw"><h2>Wyprawy na drugi koniec świata</h2></div>
+<div class="wpr">
+<button class="wp" data-big="img/meduzy.webp"><img src="img/palau.webp" width="640" height="480" loading="lazy" alt="Wyspy Palau na Oceanie Spokojnym"><div><span class="d">15.02.2027</span><h3>Palau</h3><p>Blue Corner z rekinami rafowymi, jezioro meduz i wraki z II wojny światowej.</p></div></button>
+<button class="wp" data-big="img/filipiny.webp"><img src="img/filipiny.webp" width="640" height="480" loading="lazy" alt="Żółw morski na Filipinach"><div><span class="d">14.06.2027</span><h3>Filipiny, Tubbataha</h3><p>Rafy wpisane na listę UNESCO, dostępne tylko z łodzi.</p></div></button>
+<button class="wp" data-big="img/cenoty.webp"><img src="img/cenoty.webp" width="640" height="480" loading="lazy" alt="Nurkowanie w cenocie w Meksyku"><div><span class="d">25.11 - 7.12.2027</span><h3>Meksyk, cenoty</h3><p>Nurkowanie w podziemnych studniach Jukatanu i zwiedzanie półwyspu.</p></div></button>
+</div>
+</div>
+</section>
+
+<section id="kursy" class="g kur">
+<div class="wrap">
+<div class="glowa">
+<div class="lw"><h2>Kursy nurkowania w&nbsp;Krakowie</h2></div>
+<div class="strz" data-tor="t2"><button aria-label="Poprzednie">&#8592;</button><button aria-label="Następne">&#8594;</button></div>
+</div>
+<p class="lead">Zaczynamy na basenie, gdzie woda jest ciepła i spokojna. Szkolimy w systemach PADI i SSI, od pierwszego oddechu pod wodą po stopnie zawodowe.</p>
+<div class="tor" id="t2">
+<article class="wyj"><button class="fot" data-big="img/nitrox.webp" aria-label="Powiększ zdjęcie: Kurs podstawowy"><img src="img/nitrox.webp" width="640" height="480" loading="lazy" alt="Kurs podstawowy - SeaTreasure Kraków"></button><div class="tx"><span class="tag">Pierwszy certyfikat</span><h3>Kurs podstawowy</h3><p>Nauka na basenie w Krakowie, nurkowania na wodach otwartych w Polsce albo w Egipcie.</p></div></article>
+<article class="wyj"><button class="fot" data-big="img/kurs-podst-big.webp" aria-label="Powiększ zdjęcie: Nurkowanie dla dzieci"><img src="img/kurs-podst.webp" width="640" height="480" loading="lazy" alt="Nurkowanie dla dzieci - SeaTreasure Kraków"></button><div class="tx"><span class="tag">Od 8 lat</span><h3>Nurkowanie dla dzieci</h3><p>Grupy do 4 osób, zajęcia co dwa tygodnie. Od 10 lat juniorskie certyfikaty.</p></div></article>
+<article class="wyj"><button class="fot" data-big="img/dzieci.webp" aria-label="Powiększ zdjęcie: Jedno nurkowanie z instruktorem"><img src="img/dzieci.webp" width="640" height="480" loading="lazy" alt="Jedno nurkowanie z instruktorem - SeaTreasure Kraków"></button><div class="tx"><span class="tag">Na próbę</span><h3>Jedno nurkowanie z instruktorem</h3><p>Pierwszy oddech pod wodą, zanim zdecydujesz się na kurs.</p></div></article>
+<article class="wyj"><button class="fot" data-big="img/koral.webp" aria-label="Powiększ zdjęcie: Nurkowania doskonalące"><img src="img/koral.webp" width="640" height="480" loading="lazy" alt="Nurkowania doskonalące - SeaTreasure Kraków"></button><div class="tx"><span class="tag">Po przerwie</span><h3>Nurkowania doskonalące</h3><p>Odświeżenie umiejętności przed wyjazdem, pływalność i pewność w wodzie.</p></div></article>
+<article class="wyj"><button class="fot" data-big="img/suchy-big.webp" aria-label="Powiększ zdjęcie: Suchy skafander"><img src="img/suchy.webp" width="640" height="480" loading="lazy" alt="Suchy skafander - SeaTreasure Kraków"></button><div class="tx"><span class="tag">Start 26.11.2026</span><h3>Suchy skafander</h3><p>Nurkowanie w zimnej wodzie, także w polskich jeziorach.</p></div></article>
+<article class="wyj"><button class="fot" data-big="img/divemaster-big.webp" aria-label="Powiększ zdjęcie: Divemaster"><img src="img/divemaster.webp" width="640" height="480" loading="lazy" alt="Divemaster - SeaTreasure Kraków"></button><div class="tx"><span class="tag">Start 16.12.2026</span><h3>Divemaster</h3><p>Pierwszy stopień zawodowy: prowadzenie nurkowań i pomoc przy kursach.</p></div></article>
+<article class="wyj"><button class="fot" data-big="img/rescue-big.webp" aria-label="Powiększ zdjęcie: Nurek ratownik"><img src="img/rescue.webp" width="640" height="480" loading="lazy" alt="Nurek ratownik - SeaTreasure Kraków"></button><div class="tx"><span class="tag">Specjalizacja</span><h3>Nurek ratownik</h3><p>Rozwiązywanie problemów pod wodą i pomoc partnerowi.</p></div></article>
+<article class="wyj"><button class="fot" data-big="img/wrak2.webp" aria-label="Powiększ zdjęcie: Deep, Nitrox, Sidemount"><img src="img/wrak2.webp" width="640" height="480" loading="lazy" alt="Deep, Nitrox, Sidemount - SeaTreasure Kraków"></button><div class="tx"><span class="tag">Specjalizacje</span><h3>Deep, Nitrox, Sidemount</h3><p>Głębiej, dłużej i w innej konfiguracji sprzętu. Nitrox także online.</p></div></article>
+
+</div>
+</div>
+</section>
+
+<section id="zespol">
+<div class="wrap zes">
+<figure><img src="img/barbara.webp" width="480" height="358" loading="lazy" alt="Barbara Białek, instruktorka nurkowania"><figcaption>Barbara Białek, założycielka SeaTreasure</figcaption></figure>
+<div>
+<div class="lw"><h2>Uczymy tak, żeby nurkowanie było radością</h2></div>
+<p class="cyt">„Szczególnie lubię ten moment, w którym mój uczeń staje się samodzielny i wszystko samo zaczyna wychodzić.”</p>
+<p class="lead">SeaTreasure to polska firma założona w 2018 roku. Od początku organizujemy wyjazdy wyłącznie jako organizator turystyki, a bezpieczeństwo stawiamy ponad wszystkim. Szczególnie lubimy zarażać pasją najmłodszych.</p>
+<ul>
+<li><b>Ela Litwa</b>instruktorka SSI i SDI, szkolenia dzieci i sidemount</li>
+<li><b>Katarzyna „Meluzyna” Piechota</b>instruktorka Mermaid SSI</li>
+<li><b>Bartosz Schejbal</b>divemaster</li>
+<li><b>Artur Szczepański</b>wsparcie na nurkowaniach i wyjazdach</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="g">
+<div class="wrap">
+<div class="lw"><h2>Wasze rekomendacje</h2></div>
+<div class="op">
+<blockquote><p>Pomimo moich wielu początkowych obaw Basia oswoiła mnie ze wszystkim. Bardzo cierpliwa, jednocześnie wymagająca. Nie wyobrażam sobie lepszego instruktora nurkowego!</p><cite>Joanna Trojanowska</cite></blockquote>
+<blockquote><p>Na safari świetnie organizowała grupę pod wodą i utrzymywała dobrą atmosferę na powierzchni. Dzięki Tobie zniknęły moje problemy z pływalnością.</p><cite>Anita i Tomek Moczek</cite></blockquote>
+<blockquote><p>Nie mogło być lepiej, bezpieczniej i bardziej profesjonalnie. Lecimy na kolejne safari doszkalać się dalej!</p><cite>Katarzyna Mach-Opoka</cite></blockquote>
+<blockquote><p>Fantastyczny wyjazd i niezapomniane wspomnienia. Tydzień na Morzu Czerwonym, zgrani ludzie ze wspólną pasją i super profesjonalna organizacja.</p><cite>Marcin Karwat</cite></blockquote>
+</div>
+</div>
+</section>
+
+<section id="kontakt">
+<div class="wrap kon">
+<div>
+<div class="lw"><h2>Zapytaj o wolne miejsce</h2></div>
+<p class="lead">Napisz, który wyjazd albo kurs Cię interesuje. Odpowiemy z wolnymi miejscami i szczegółami.</p>
+<ul class="dane">
+<li><small>Telefon</small><a href="tel:+48504508526">+48 504 508 526</a><br><a href="tel:+48693421323">+48 693 421 323</a></li>
+<li><small>E-mail</small><a href="mailto:seatreasure@seatreasure.pl">seatreasure@seatreasure.pl</a></li>
+<li><small>Adres</small><b>ul. Kołobrzeska 16/1, 30-406 Kraków</b></li>
+</ul>
+</div>
+<form id="form">
+<div class="pol">
+<label>Imię<input name="imie" autocomplete="given-name" required></label>
+<label>Telefon lub e-mail<input name="kontakt" required></label>
+</div>
+<label>Interesuje mnie
+<select name="temat"><option>Safari nurkowe w Egipcie</option><option>Wyprawa: Palau, Filipiny, Meksyk</option><option>Kurs nurkowania w Krakowie</option><option>Nurkowanie dla dzieci</option><option>Inne pytanie</option></select></label>
+<label>Wiadomość<textarea name="wiad" placeholder="Np. termin, liczba osób, stopień nurkowy"></textarea></label>
+<button class="btn" type="submit">Wyślij zapytanie</button>
+<p id="ok">To podgląd strony - formularz zacznie działać na docelowej wersji.</p>
+</form>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="st">
+<div><img src="img/logo-b-220.webp" width="220" height="60" loading="lazy" alt="SeaTreasure" style="margin-bottom:16px"><p>SeaTreasure Barbara Białek<br>ul. Kołobrzeska 16/1, 30-406 Kraków<br>NIP 6782869659<br>Organizator turystyki nr 22408</p></div>
+<div><h3>Wyjazdy</h3><ul><li><a href="#terminy">Kalendarz wyjazdów</a></li><li><a href="#safari">Safari w Egipcie</a></li><li><a href="#wyprawy">Wyprawy</a></li></ul></div>
+<div><h3>Kursy</h3><ul><li><a href="#kursy">Kurs podstawowy</a></li><li><a href="#kursy">Nurkowanie dzieci</a></li><li><a href="#kursy">Specjalizacje</a></li></ul></div>
+<div><h3>Kontakt</h3><ul><li><a href="tel:+48504508526">504 508 526</a></li><li><a href="mailto:seatreasure@seatreasure.pl">seatreasure@seatreasure.pl</a></li><li>Warunki uczestnictwa</li><li>Polityka prywatności</li></ul></div>
+</div>
+<div class="dol"><span>© <span id="rok">2026</span> SeaTreasure</span><a class="wylinka-badge" href="https://wylinka.pl/?utm_source=seatreasure.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a></div>
+</div>
+</footer>
+<div id="lb" role="dialog" aria-label="Powiększone zdjęcie"><button aria-label="Zamknij">&times;</button><img alt=""></div>
+<script src="app.js" defer></script>
+</body>
+</html>
